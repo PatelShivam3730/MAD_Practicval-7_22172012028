@@ -16,6 +16,16 @@ class MainActivity : AppCompatActivity() {
         val uri: Uri = Uri.parse("android.resource://" + packageName + "/" + R.raw.thestoryoflight)
     }
 
+    fun initvideoplayer(){
+        val videoView: VideoView=findViewById(R.id.videoView)
+        val mediaController=MediaController(this)
+        val uri: Uri =Uri.parse("android.resource://"+packageName+"/"+R.raw.thestoryoflight)
+        videoView.setMediaController(mediaController)
+        mediaController.setAnchorView(videoView)
+        videoView.setVideoURI(uri)
+        videoView.requestFocus()
+        videoView.start()
+    }
 
 
 }
