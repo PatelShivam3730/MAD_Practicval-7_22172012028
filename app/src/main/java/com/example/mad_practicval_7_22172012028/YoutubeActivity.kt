@@ -1,38 +1,19 @@
-package com.example.mad_practicval_7_22172012028
+package com.example.mad_practical_7_22172012028
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebSettings
 import android.webkit.WebView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.mad_practicval_7_22172012028.R
 
-class youtubeActivity : AppCompatActivity() {
-    lateinit var webView:WebView
+class YoutubeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_youtube)
-
-        webView = findViewById(R.id.web)
-        val btn:FloatingActionButton = findViewById(R.id.button)
-
-        initYoutubePlayer()
-        btn.setOnClickListener {
-            Intent(this@youtubeActivity, MainActivity::class.java).also {
-                startActivity(it)
-            }
+        val YoutubeID = "fJn9B64Znrk"
+        fun YTPlayer()
+        {
+            val webview = findViewById<WebView>(R.id.webView)
         }
     }
-
-    val youtubeId="fJn9B64Znrk"
-    fun initYoutubePlayer()
-    {
-        val webSettings:WebSettings = webView.settings
-        webSettings.javaScriptEnabled = true
-        webSettings.loadWithOverviewMode = true
-        webSettings.useWideViewPort = true
-        webView.loadUrl("https://www.youtube.com/embed/$youtubeId")
-
-    }
 }
-
